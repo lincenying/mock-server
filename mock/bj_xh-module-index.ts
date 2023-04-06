@@ -1,6 +1,5 @@
-import { baseApi } from './_api'
+import { baseApi, getArray, getTwoArray } from './_api'
 import type { requestParams } from './_mock.types'
-import { getArray, getTwoArray } from '@/utils'
 
 export default [
     {
