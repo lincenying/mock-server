@@ -33,8 +33,8 @@ export default ({ mode, command }) => {
                 localEnabled: command === 'serve' && localMock,
                 prodEnabled: command !== 'serve' && prodMock,
                 injectCode: `
-                  import { setupProdMockServer } from './mockProdServer';
-                  setupProdMockServer();
+                    import { setupProdMockServer } from '${path.resolve('./src/mockProdServer')}';
+                    setupProdMockServer();
                 `,
                 injectFile: 'src/index.ts',
                 logger: true,
@@ -63,11 +63,11 @@ export default ({ mode, command }) => {
         server: {
             port: 9988,
             proxy: {
-                '/imocScreenBjStarfire': {
-                    target: 'http://127.0.0.1:9988',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(new RegExp('^/imocScreenBjStarfire'), '/mock-api'),
-                },
+                // '/imocScreenBjStarfire': {
+                //     target: 'http://127.0.0.1:9988',
+                //     changeOrigin: true,
+                //     rewrite: path => path.replace(/^\/imocScreenBjStarfire/, '/mock-api'),
+                // },
                 // '/imocScreenBjStarfire': {
                 //     target: 'http://192.168.1.170:8080',
                 //     changeOrigin: true,
