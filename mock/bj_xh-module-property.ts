@@ -51,9 +51,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/leftRB`,
         method: 'post',
-        response: (request: requestParams) => {
-            const query = request?.query
-            console.log('query.orderSeq :>> ', query.orderSeq)
+        response: (_request: requestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -69,9 +67,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/mid`,
         method: 'post',
-        response: (request: requestParams) => {
-            const query = request?.query
-            console.log('query.orderSeq :>> ', query.orderSeq)
+        response: (_request: requestParams) => {
             const arr = ['星火链网', '业务支撑', '公共服务平台', '公共身份核验', '工业互联网与物联网标识', '互联网域名']
             const abd = arr.map((item) => {
                 return {
@@ -96,9 +92,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/right`,
         method: 'post',
-        response: (request: requestParams) => {
-            const query = request?.query
-            console.log('query.orderSeq :>> ', query.orderSeq)
+        response: (_request: requestParams) => {
             return {
                 code: 200,
                 message: 'ok',

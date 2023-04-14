@@ -6,9 +6,7 @@ export default [
         // 左
         url: `/${baseApi}/screen/cover/left`,
         method: 'post',
-        response: (request: requestParams) => {
-            const query = request?.query
-            console.log('query.id :>> ', query.id)
+        response: (_request: requestParams) => {
             return {
                 code: 200,
                 message: 'ok',

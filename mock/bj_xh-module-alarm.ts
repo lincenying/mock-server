@@ -1,4 +1,4 @@
-import { baseApi, getArray, getTwoArray } from './_api'
+import { baseApi, getArray, getArrayObj, getTwoArray } from './_api'
 import type { requestParams } from './_mock.types'
 
 const getVal = (timeName: string) => {
@@ -64,7 +64,11 @@ export default [
                         '监控对象告警频发TOP10图表X轴',
                         true,
                     ],
-                    alarmChartValues: [getArray(10, 100, 500), '监控对象告警频发TOP10图表值', true],
+                    alarmChartValues: [getArrayObj({
+                        area: '@county()',
+                        business_tag: '@ctitle(3, 5)',
+                        count: '@integer(0, 100)',
+                    }, 10), '监控对象告警频发TOP10图表值', true],
                 },
             }
         },

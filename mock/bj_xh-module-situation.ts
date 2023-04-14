@@ -6,9 +6,7 @@ export default [
         // 左左
         url: `/${baseApi}/screen/home/leftL`,
         method: 'post',
-        response: (request: requestParams) => {
-            const query = request?.query
-            console.log('query.id :>> ', query.id)
+        response: (_request: requestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -119,7 +117,7 @@ export default [
         url: `/${baseApi}/screen/home/leftR`,
         method: 'post',
         response: (_request: requestParams) => {
-            const citys = ['all', 'beijing', 'shanghai', 'guangzhou', 'shenzhen', 'shenyang', 'chengdu', 'wuhan', 'nanjing']
+            const citys = ['all', 'beijing', 'shanghai', 'guangzhou', 'xiamen', 'shenyang', 'chengdu', 'wuhan', 'nanjing']
             const citysObj: Record<string, any> = {}
             citys.forEach((item) => {
                 citysObj[item] = {
