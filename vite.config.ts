@@ -9,7 +9,6 @@ export default defineConfig(({ mode, command }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
     const localMock = true
-    const prodMock = false
 
     const config = {
         plugins: [
@@ -26,13 +25,7 @@ export default defineConfig(({ mode, command }) => {
             }),
             viteMockServe({
                 mockPath: 'mock',
-                localEnabled: command === 'serve' && localMock,
-                prodEnabled: command !== 'serve' && prodMock,
-                injectCode: `
-                    import { setupProdMockServer } from '${path.resolve('./src/mockProdServer')}';
-                    setupProdMockServer();
-                `,
-                injectFile: 'src/index.ts',
+                enable: command === 'serve' && localMock,
                 logger: true,
             }),
         ],

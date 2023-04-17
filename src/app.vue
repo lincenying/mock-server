@@ -10,30 +10,10 @@
 <script setup lang="ts">
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
+import { mockModules } from './mockProdServer';
+import { MockMethod } from 'vite-plugin-mock';
 
-const modules1: Record<string, any> = import.meta.glob('../mock/*.ts', { eager: true })
-const modules2: Record<string, any> = import.meta.glob('../mock/*.js', { eager: true })
-
-const modules = {
-    ...modules1,
-    ...modules2,
-}
-
-interface ItemType {
-    method: string
-    url: string
-    response: any
-}
-
-const _mockModules: Array<ItemType> = []
-Object.keys(modules).forEach((key) => {
-    if (key.includes('/_'))
-        return
-
-    _mockModules.push(...modules[key].default)
-})
-
-const arrUrl = $ref<Array<ItemType>>(_mockModules)
+const arrUrl = $ref<Array<MockMethod>>(mockModules)
 
 let data = $ref()
 
@@ -42,7 +22,7 @@ const instance = axios.create({
     headers: { 'X-Custom-Header': 'foobar' },
 })
 
-async function handleXhr(item: ItemType) {
+async function handleXhr(item: MockMethod) {
     let xhr: any = null
     if (item.method === 'get')
         xhr = instance.get(item.url)
