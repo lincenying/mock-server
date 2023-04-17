@@ -1,7 +1,7 @@
 import { baseApi, getArray, getArrayObj, getTwoArray } from './_api'
 import type { requestParams } from './_mock.types'
 
-const getVal = (timeName: string) => {
+function getVal(timeName: string) {
     let val
     if (timeName === 'WEEK')
         val = Array.from({ length: 7 }, () => '@date("MM-dd")')

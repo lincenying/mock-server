@@ -10,6 +10,7 @@
 <script setup lang="ts">
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
+
 const modules1: Record<string, any> = import.meta.glob('../mock/*.ts', { eager: true })
 const modules2: Record<string, any> = import.meta.glob('../mock/*.js', { eager: true })
 
@@ -41,7 +42,7 @@ const instance = axios.create({
     headers: { 'X-Custom-Header': 'foobar' },
 })
 
-const handleXhr = async (item: ItemType) => {
+async function handleXhr(item: ItemType) {
     let xhr: any = null
     if (item.method === 'get')
         xhr = instance.get(item.url)

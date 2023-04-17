@@ -32,6 +32,7 @@
 import { createApp } from 'vue'
 
 import App from '@/app.vue'
+
 console.log(`VITE_APP_ENV: ${import.meta.env.VITE_APP_ENV}`)
 
 const app = createApp(App)

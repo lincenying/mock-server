@@ -1,15 +1,11 @@
 import path from 'node:path'
-
-import { loadEnv } from 'vite'
-
+import { defineConfig, loadEnv } from 'vite'
 import vuePlugin from '@vitejs/plugin-vue'
-
 import { viteMockServe } from 'vite-plugin-mock'
-
-import VueMacros from 'unplugin-vue-macros/vite'
+import VueMacros from 'unplugin-vue-macros'
 
 // https://vitejs.dev/config/
-export default ({ mode, command }) => {
+export default defineConfig(({ mode, command }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
     const localMock = true
@@ -17,7 +13,7 @@ export default ({ mode, command }) => {
 
     const config = {
         plugins: [
-            VueMacros({
+            VueMacros.vite({
                 plugins: {
                     vue: vuePlugin({
                         template: {
@@ -77,4 +73,4 @@ export default ({ mode, command }) => {
         },
     }
     return config
-}
+})
