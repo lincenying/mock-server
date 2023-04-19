@@ -1,5 +1,6 @@
-import pkg from 'mockjs';
-const { Random } = pkg;
+import pkg from 'mockjs'
+
+const { Random } = pkg
 
 export const baseApi = 'mock-api/imocScreenBjStarfire'
 

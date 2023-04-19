@@ -10,8 +10,8 @@
 <script setup lang="ts">
 import type { AxiosResponse } from 'axios'
 import axios from 'axios'
-import { mockModules } from './mockProdServer';
-import { MockMethod } from 'vite-plugin-mock';
+import type { MockMethod } from '@lincy/vite-plugin-mock'
+import { mockModules } from './mockProdServer'
 
 const arrUrl = $ref<Array<MockMethod>>(mockModules)
 

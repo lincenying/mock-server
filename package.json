@@ -19,20 +19,22 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@lincy/eslint-config": "^1.1.1",
+    "@lincy/stylelint-config": "^1.15.10",
+    "@lincy/vite-plugin-mock": "^3.0.0",
     "@types/mockjs": "^1.0.7",
+    "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.1.0",
     "default-passive-events": "^2.0.0",
     "eslint": "^8.38.0",
-    "eslint-config-lcy": "^1.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "mockjs": "^1.1.0",
     "sass": "^1.62.0",
-    "stylelint-config-lcy": "^1.15.10",
     "typescript": "^5.0.4",
     "unplugin-vue-macros": "^2.0.0",
     "url-search-params-polyfill": "^8.1.1",
-    "vite": "^4.2.0",
+    "vite": "^4.2.2",
     "vite-plugin-mock": "^3.0.0"
   },
   "pnpm": {

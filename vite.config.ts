@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { defineConfig, loadEnv } from 'vite'
 import vuePlugin from '@vitejs/plugin-vue'
-import { viteMockServe } from 'vite-plugin-mock'
+import { viteMockServe } from '@lincy/vite-plugin-mock'
 import VueMacros from 'unplugin-vue-macros'
 
 // https://vitejs.dev/config/

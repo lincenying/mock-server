@@ -1,6 +1,7 @@
-import { MockMethod } from 'vite-plugin-mock'
-// @ts-ignore
-import { createProdMockServer } from 'vite-plugin-mock/client'
+import type { MockMethod } from '@lincy/vite-plugin-mock'
+
+// @ts-expect-error 1111
+import { createProdMockServer } from '@lincy/vite-plugin-mock/client'
 
 const modules1: Record<string, any> = import.meta.glob('../mock/*.js', { eager: true })
 const modules2: Record<string, any> = import.meta.glob('../mock/*.ts', { eager: true })
