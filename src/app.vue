@@ -1,16 +1,23 @@
 <template>
-    <div style="display: flex">
-        <div>
-            <div v-for="(item, index) in arrUrl" :key="index">{{ item.method }}: {{ item.url }} <button @click="handleXhr(item)">请求</button></div>
+    <div flex>
+        <div h-100vh p-10px overflow-auto>
+            <div v-for="(item, index) in arrUrl" :key="index" flex="~ justify-between" mb-8px>
+                <div mr-20px text-13px>{{ item.method }}: {{ item.url }}</div>
+                <button btn @click="handleXhr(item)">请求</button>
+            </div>
         </div>
-        <pre>{{ data }}</pre>
+        <!-- <pre flex-auto h-100vh overflow-auto ml-20px text-14px b="1px solid #ccc">{{ data }}</pre> -->
+        <JsonViewer :value="data" :expanded="true" :expand-depth="4" sort flex-auto h-100vh overflow-auto ml-20px text-14px b="1px solid #ccc" theme="light" />
     </div>
 </template>
 
 <script setup lang="ts">
-import type { AxiosResponse } from 'axios'
 import axios from 'axios'
+import { JsonViewer } from 'vue3-json-viewer'
+
 import type { MockMethod } from '@lincy/vite-plugin-mock'
+import type { AxiosResponse } from 'axios'
+
 import { mockModules } from './mockProdServer'
 
 const arrUrl = $ref<Array<MockMethod>>(mockModules)

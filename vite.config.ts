@@ -3,6 +3,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vuePlugin from '@vitejs/plugin-vue'
 import { viteMockServe } from '@lincy/vite-plugin-mock'
 import VueMacros from 'unplugin-vue-macros'
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => {
@@ -27,6 +28,9 @@ export default defineConfig(({ mode, command }) => {
                 mockPath: 'mock',
                 enable: command === 'serve' && localMock,
                 logger: true,
+            }),
+            UnoCSS({
+                /* options */
             }),
         ],
         resolve: {

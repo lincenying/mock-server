@@ -30,11 +30,18 @@
 //                  不见满街漂亮妹，哪个归得程序员？
 
 import { createApp } from 'vue'
+import JsonViewer from 'vue3-json-viewer'
+
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
+import 'vue3-json-viewer/dist/index.css'
 
 import App from '@/app.vue'
 
 console.log(`VITE_APP_ENV: ${import.meta.env.VITE_APP_ENV}`)
 
 const app = createApp(App)
+
+app.use(JsonViewer)
 
 app.mount('#app')
