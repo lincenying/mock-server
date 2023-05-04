@@ -6,7 +6,7 @@ declare type UnfAble<T> = T | undefined
 declare type Obj = Record<string, any>
 declare type ObjT<T> = Record<string, T>
 
-declare interface requestParams {
+declare interface RequestParams {
     method: string
     body: any
     headers?: { authorization?: string }

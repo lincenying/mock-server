@@ -1,12 +1,11 @@
 import { baseApi, getArray, getTwoArray } from './_api'
-import type { requestParams } from './_mock.types'
 
 export default [
     {
         // 左上左
         url: `/${baseApi}/screen/asset/leftL`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -28,7 +27,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/leftRT`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.orderSeq :>> ', query.orderSeq)
             return {
@@ -51,7 +50,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/leftRB`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -67,7 +66,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/mid`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             const arr = ['星火链网', '业务支撑', '公共服务平台', '公共身份核验', '工业互联网与物联网标识', '互联网域名']
             const abd = arr.map((item) => {
                 return {
@@ -92,7 +91,7 @@ export default [
         // 左上左
         url: `/${baseApi}/screen/asset/right`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',

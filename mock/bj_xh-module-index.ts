@@ -1,12 +1,11 @@
 import { baseApi, getArray, getTwoArray } from './_api'
-import type { requestParams } from './_mock.types'
 
 export default [
     {
         // 左
         url: `/${baseApi}/screen/cover/left`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -25,7 +24,7 @@ export default [
         // 右
         url: `/${baseApi}/screen/cover/right`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -57,7 +56,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/cover/mid`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',

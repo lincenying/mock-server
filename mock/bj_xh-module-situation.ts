@@ -1,12 +1,11 @@
 import { baseApi, getArray, getTwoArray } from './_api'
-import type { requestParams } from './_mock.types'
 
 export default [
     {
         // 左左
         url: `/${baseApi}/screen/home/leftL`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -57,7 +56,7 @@ export default [
         // 中间
         url: `/${baseApi}/screen/home/mid`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             const cityEnName
                 = 'nanjing,riben,guangzhou,chengdu,beijing,chongqing,meiguo,nanfei,shenyang,wuhan,helan,shanghai,jinan,liuzhou,xiamen,baxi'.split(',')
             const cityCnName = '南京,日本,广州,成都,北京,重庆,美国,南非,沈阳,武汉,荷兰,上海,济南,柳州,厦门,巴西'.split(',')
@@ -116,7 +115,7 @@ export default [
         // 中间
         url: `/${baseApi}/screen/home/leftR`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             const citys = ['all', 'beijing', 'shanghai', 'guangzhou', 'xiamen', 'shenyang', 'chengdu', 'wuhan', 'nanjing']
             const citysObj: Record<string, any> = {}
             citys.forEach((item) => {
@@ -152,7 +151,7 @@ export default [
         // 中间
         url: `/${baseApi}/screen/home/rightRTB`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -176,7 +175,7 @@ export default [
         // 中间
         url: `/${baseApi}/screen/home/rightRM`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -228,7 +227,7 @@ export default [
         // 中间
         url: `/${baseApi}/screen/home/rightL`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             const data = Array.from({ length: 9 }, () => {
                 return ['服务器', '网络安全设备', '机柜', '存储及光纤', '带宽资源'].map((item) => {
                     return {

@@ -1,12 +1,11 @@
 import { baseApi, getTwoArray } from './_api'
-import type { requestParams } from './_mock.types'
 
 export default [
     {
         // 左上左
         url: `/${baseApi}/screen/resource/leftTL`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.businessTag :>> ', query.businessTag)
             console.log('query.resType :>> ', query.resType)
@@ -28,7 +27,7 @@ export default [
         // 左上右
         url: `/${baseApi}/screen/resource/leftTR`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.businessTag :>> ', query.businessTag)
             console.log('query.resType :>> ', query.resType)
@@ -50,7 +49,7 @@ export default [
         // 左下
         url: `/${baseApi}/screen/resource/leftB`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -95,7 +94,7 @@ export default [
         // 右上左
         url: `/${baseApi}/screen/resource/rightTL`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.businessTag :>> ', query.businessTag)
             return {
@@ -122,7 +121,7 @@ export default [
         // 右上右
         url: `/${baseApi}/screen/resource/rightTR`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.businessTag :>> ', query.businessTag)
             console.log('query.metType :>> ', query.metType)
@@ -150,7 +149,7 @@ export default [
         // 右下
         url: `/${baseApi}/screen/resource/rightB`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             console.log('query.resType :>> ', query.resType)
             console.log('query.metType :>> ', query.metType)

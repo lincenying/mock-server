@@ -1,5 +1,4 @@
 import { baseApi, getArray, getArrayObj, getTwoArray } from './_api'
-import type { requestParams } from './_mock.types'
 
 function getVal(timeName: string) {
     let val
@@ -26,7 +25,7 @@ export default [
         // 左
         url: `/${baseApi}/screen/alarm/leftLT`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
 
             return {
@@ -43,7 +42,7 @@ export default [
         // 右
         url: `/${baseApi}/screen/alarm/leftLB`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -77,7 +76,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/mid`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             const obj = {
                 id: '92c93c74acf84503a708c47e53d1ce531676806554307',
                 monitorObject: '172.19.5.50',
@@ -113,7 +112,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/rightLT`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
@@ -135,7 +134,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/rightLB`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             return {
                 code: 200,
@@ -151,7 +150,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/rightRT`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             return {
                 code: 200,
@@ -167,7 +166,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/rightRB`,
         method: 'post',
-        response: (request: requestParams) => {
+        response: (request: RequestParams) => {
             const query = request?.query
             return {
                 code: 200,
@@ -183,7 +182,7 @@ export default [
         // 中
         url: `/${baseApi}/screen/alarm/leftR`,
         method: 'post',
-        response: (_request: requestParams) => {
+        response: (_request: RequestParams) => {
             return {
                 code: 200,
                 message: 'ok',
