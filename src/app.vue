@@ -10,7 +10,7 @@
             </template>
         </div>
         <!-- <pre flex-auto h-100vh overflow-auto ml-20px text-14px b="1px solid #ccc">{{ data }}</pre> -->
-        <JsonViewer :value="data || {}" :expanded="true" :expand-depth="4" sort flex-auto h-100vh overflow-auto m="l-20px" text-14px b-l="1px solid #ccc" theme="light" />
+        <JsonViewer :value="data || {}" :expanded="true" :expand-depth="5" sort flex-auto h-100vh overflow-auto m="l-20px" text-14px b-l="1px solid #ccc" theme="light" />
     </div>
 </template>
 
