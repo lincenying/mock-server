@@ -9,7 +9,7 @@ import UnoCSS from 'unocss/vite'
 export default defineConfig(({ mode, command }) => {
     process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
-    const localMock = true
+    console.log(`当前编译环境: ${process.env.VITE_APP_ENV}`)
 
     const config = {
         plugins: [
@@ -26,7 +26,7 @@ export default defineConfig(({ mode, command }) => {
             }),
             viteMockServe({
                 mockPath: 'mock',
-                enable: command === 'serve' && localMock,
+                enable: command === 'serve' || process.env.VITE_APP_ENV === 'test',
                 logger: true,
             }),
             UnoCSS({
@@ -51,6 +51,15 @@ export default defineConfig(({ mode, command }) => {
                     main: path.resolve(__dirname, 'index.html'),
                 },
                 external: /\.\/assets.*/,
+                output: {
+                    manualChunks(id: string) {
+                        if (id.includes('node_modules')) {
+                            if (id.includes('mock'))
+                                return 'mockjs'
+                            return 'vendor'
+                        }
+                    },
+                },
             },
         },
         server: {

@@ -1,4 +1,5 @@
-import { baseApi, getTwoArray } from './_api'
+import { getTwoArray } from './_utils'
+import { baseApi } from './_api'
 
 export default [
     {

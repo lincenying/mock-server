@@ -45,3 +45,10 @@ const app = createApp(App)
 app.use(JsonViewer)
 
 app.mount('#app')
+
+// production mock server
+if (import.meta.env.VITE_APP_ENV === 'test') {
+    import('./mockProdServer').then(({ setupProdMockServer }) => {
+        setupProdMockServer()
+    })
+}

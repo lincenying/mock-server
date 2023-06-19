@@ -1,4 +1,5 @@
-import { baseApi, getArray, getArrayObj, getTwoArray } from './_api'
+import { getArray, getArrayObj, getTwoArray } from './_utils'
+import { baseApi } from './_api'
 
 function getVal(timeName: string) {
     let val
