@@ -28,13 +28,14 @@ export default [
         method: 'post',
         response: (request: RequestParams) => {
             const query = request?.query
+            const timeName = query.timeName || 'WEEK'
 
             return {
                 code: 200,
                 message: 'ok',
                 data: {
-                    alarmChartXAxis: [getVal(query.timeName), '告警图表X轴', true],
-                    alarmChartValues: [getArray(len[query.timeName as LenType]), '告警图表值', true],
+                    alarmChartXAxis: [getVal(timeName), '告警图表X轴', true],
+                    alarmChartValues: [getArray(len[timeName as LenType]), '告警图表值', true],
                 },
             }
         },
@@ -137,12 +138,13 @@ export default [
         method: 'post',
         response: (request: RequestParams) => {
             const query = request?.query
+            const timeName = query.timeName || 'WEEK'
             return {
                 code: 200,
                 message: 'ok',
                 data: {
-                    ticketChartValues: [getTwoArray(len[query.timeName as LenType], 3), '工单解决率趋势图表值', true],
-                    ticketChartXAxis: [getVal(query.timeName), '工单解决率趋势趋势图表X轴', true],
+                    ticketChartValues: [getTwoArray(len[timeName as LenType], 3), '工单解决率趋势图表值', true],
+                    ticketChartXAxis: [getVal(timeName), '工单解决率趋势趋势图表X轴', true],
                 },
             }
         },
@@ -153,12 +155,13 @@ export default [
         method: 'post',
         response: (request: RequestParams) => {
             const query = request?.query
+            const timeName = query.timeName || 'WEEK'
             return {
                 code: 200,
                 message: 'ok',
                 data: {
-                    ticketChartValues: [getTwoArray(len[query.timeName as LenType], 2), '工单发生趋势图表值', true],
-                    ticketChartXAxis: [getVal(query.timeName), '工单发生趋势趋势图表X轴', true],
+                    ticketChartValues: [getTwoArray(len[timeName as LenType], 2), '工单发生趋势图表值', true],
+                    ticketChartXAxis: [getVal(timeName), '工单发生趋势趋势图表X轴', true],
                 },
             }
         },
@@ -169,12 +172,13 @@ export default [
         method: 'post',
         response: (request: RequestParams) => {
             const query = request?.query
+            const timeName = query.timeName || 'WEEK'
             return {
                 code: 200,
                 message: 'ok',
                 data: {
-                    ticketChartValues: [getTwoArray(len[query.timeName as LenType], 2), '工单处理及完成对比图表值', true],
-                    ticketChartXAxis: [getVal(query.timeName), '工单处理及完成对比图表X轴', true],
+                    ticketChartValues: [getTwoArray(len[timeName as LenType], 2), '工单处理及完成对比图表值', true],
+                    ticketChartXAxis: [getVal(timeName), '工单处理及完成对比图表X轴', true],
                 },
             }
         },

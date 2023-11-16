@@ -1,4 +1,5 @@
 import path from 'node:path'
+import process from 'node:process'
 import { defineConfig, loadEnv } from 'vite'
 import vuePlugin from '@vitejs/plugin-vue'
 import { viteMockServe } from '@lincy/vite-plugin-mock'
@@ -50,7 +51,7 @@ export default defineConfig(({ mode, command }) => {
                 input: {
                     main: path.resolve(__dirname, 'index.html'),
                 },
-                external: /\.\/assets.*/,
+                external: /static\/.*?\.[cm]*js/,
                 output: {
                     manualChunks(id: string) {
                         if (id.includes('node_modules')) {

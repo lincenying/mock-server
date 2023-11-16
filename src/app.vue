@@ -1,8 +1,8 @@
 <template>
     <div flex>
-        <div h-100vh p-10px overflow-auto>
+        <div h-100vh overflow-auto p-10px>
             <template v-for="(item) in arrUrl" :key="item.file">
-                <div mb-10px text-15px text-red font-600>{{ item.file }}</div>
+                <div mb-10px text-15px font-600 text-red>{{ item.file }}</div>
                 <div v-for="(sub_item, sub_index) in item.data" :key="sub_index" flex="~ justify-between" mb-4px>
                     <div mr-20px text-13px>{{ sub_item.method }}: {{ sub_item.url }}</div>
                     <button btn @click="handleXhr(sub_item)">请求</button>
@@ -10,7 +10,7 @@
             </template>
         </div>
         <!-- <pre flex-auto h-100vh overflow-auto ml-20px text-14px b="1px solid #ccc">{{ data }}</pre> -->
-        <JsonViewer :value="data || {}" :expanded="true" :expand-depth="5" sort flex-auto h-100vh overflow-auto m="l-20px" text-14px b-l="1px solid #ccc" theme="light" />
+        <JsonViewer :value="data || {}" :expanded="true" :expand-depth="5" m="l-20px" sort h-100vh flex-auto overflow-auto text-14px b-l="1px solid #ccc" theme="light" />
     </div>
 </template>
 

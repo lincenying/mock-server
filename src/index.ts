@@ -31,8 +31,9 @@
 
 import { createApp } from 'vue'
 import JsonViewer from 'vue3-json-viewer'
+import { setupProdMockServer } from './mockProdServer'
 
-import '@unocss/reset/tailwind.css'
+import '@unocss/reset/tailwind-compat.css'
 import 'uno.css'
 import 'vue3-json-viewer/dist/index.css'
 
@@ -47,8 +48,5 @@ app.use(JsonViewer)
 app.mount('#app')
 
 // production mock server
-if (import.meta.env.VITE_APP_ENV === 'test') {
-    import('./mockProdServer').then(({ setupProdMockServer }) => {
-        setupProdMockServer()
-    })
-}
+if (import.meta.env.VITE_APP_ENV === 'test')
+    setupProdMockServer()
